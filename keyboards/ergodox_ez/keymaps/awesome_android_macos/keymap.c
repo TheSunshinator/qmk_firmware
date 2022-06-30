@@ -6,6 +6,7 @@
 
 enum layers {
     DVORAK,
+    UNICODE,
     NUMPAD,
     BUILD,
     DEBUGGING,
@@ -59,6 +60,12 @@ enum layers {
 #define FN_CLONE_CARET HYPR(KC_DOWN)
 #define FN_SUPER LGUI(KC_U)
 #define FN_IMPLEMENTATION LALT(LGUI(KC_B))
+#define FN_METHOD_UP LGUI(RSA(KC_UP))
+#define FN_METHOD_DOWN LGUI(LSA(KC_DOWN))
+#define FN_SPLIT_RIGHT LCTL(SGUI(KC_RGHT))
+#define FN_REVERT LGUI(LALT(KC_Z))
+#define FN_COMMIT LGUI(KC_0)
+#define FN_PROJECT LGUI(KC_1)
 
 // Debug layer functions
 #define FN_CONTINUE_DEBUG RALT(RGUI(KC_R))
@@ -72,8 +79,6 @@ enum layers {
 #define FN_CLEAR_RESTART_DEBUG HYPR(KC_3)
 #define FN_MUTE_DEBUG HYPR(KC_RBRC)
 #define FN_BREAKPOINT LGUI(KC_F8)
-#define FN_METHOD_UP LGUI(LSFT(KC_UP))
-#define FN_METHOD_DOWN LGUI(LSFT(KC_DOWN))
 
 // Functions layer functions
 #define FN_PASTE LGUI(KC_V)
@@ -82,8 +87,52 @@ enum layers {
 #define FN_AIGUE LALT(KC_E)
 #define FN_CIRC LALT(KC_I)
 #define FN_LOCK LCTL(LGUI(KC_Q))
-#define FN_PUSH_TALK MEH(KC_DOT)
+#define FN_PUSH_TALK KC_MS_BTN5
 #define FN_SCREENSHOT LSFT(LGUI(KC_4))
+
+enum unicode_names {
+    ROFL,
+    POP,
+    THINK,
+	SURPRISE,
+	HAPPY,
+	SHRUG,
+	EYES,
+	SAD,
+	APATHY,
+	HORNS,
+	STRONG,
+	ISH,
+	POINT_UP,
+	LOVE,
+	SWEAT_SMILE,
+	CONFUSED,
+	LIKE,
+	CRY,
+	SKULL,
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [ROFL] = 0x1F923, // 🤣
+    [POP] = 0x1F389, // 🎉
+    [THINK] = 0x1F914, // 🤔
+	[SURPRISE] = 0x1F62E, // 😮
+	[HAPPY] = 0x1F60A, // 😊
+	[SHRUG] = 0x1F937, // 🤷
+	[EYES] = 0x1F440, // 👀
+	[SAD] = 0x1F61E, // 😞
+	[APATHY] = 0x1F611, // 😑
+	[HORNS] = 0x1F918, // 🤘
+	[STRONG] = 0x1F4AA, // 💪
+	[ISH] = 0x1F62C, // 😬
+	[POINT_UP] = 0x261D, // ☝️
+	[LOVE] = 0x1F970, // 🥰
+	[SWEAT_SMILE] = 0x1F605, // 😅
+	[CONFUSED] = 0x1F615, // 😕
+	[LIKE] = 0x1F44D, // 👍
+	[CRY] = 0x1F62D, // 😭
+	[SKULL] = 0x1F480, // 💀
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -103,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_RBRC,          KC_6,    KC_7,      KC_8,    KC_9,              KC_0,              KC_EQL,
     KC_RSPC,          KC_F,    KC_G,      KC_C,    KC_R,              KC_L,              TT(NUMPAD),
                       KC_D,    KC_H,      KC_T,    KC_N,              KC_S,              KC_DEL,
-    KC_RCBR,          KC_B,    KC_M,      KC_W,    KC_V,              KC_UP,             KC_CAPS,
+    KC_RCBR,          KC_B,    KC_M,      KC_W,    KC_V,              KC_UP,             MO(UNICODE),
                                KC_BSLASH, KC_SLSH, KC_LEFT,           KC_DOWN,           KC_RGHT,
 
     MO(FUNCTIONS),    TT(DEBUGGING),
@@ -111,6 +160,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RALT_T(KC_END),   RSFT_T(KC_ENT), KC_LGUI
 
   ),
+
+  [UNICODE] = LAYOUT_ergodox(
+
+    X(SKULL),    KC_TRNS,          KC_TRNS,         KC_TRNS,     KC_TRNS,    KC_TRNS,     KC_TRNS,
+    KC_TRNS,     KC_TRNS,          X(SHRUG),        X(POINT_UP), X(POP),     KC_TRNS,     X(STRONG),
+    KC_TRNS,     X(HORNS),         X(SURPRISE),     X(ROFL),     X(HAPPY),   X(ISH),
+    KC_TRNS,     X(CONFUSED),      X(SWEAT_SMILE),  X(APATHY),   X(LOVE),    X(EYES),     KC_TRNS,
+    KC_TRNS,     KC_TRNS,          X(CRY),          X(SAD),      X(THINK),
+
+                                          				  	    	KC_TRNS, KC_TRNS,
+                                                         		   			 KC_TRNS,
+                                            			   KC_TRNS, X(LIKE), KC_TRNS,
+
+
+    KC_TRNS,     KC_TRNS,         KC_TRNS,    KC_TRNS,    KC_TRNS,     KC_TRNS,         KC_TRNS,
+    KC_TRNS,     KC_TRNS,         KC_TRNS,    KC_TRNS,    KC_TRNS,     KC_TRNS,         KC_TRNS,
+                 KC_TRNS,         KC_TRNS,    KC_TRNS,    KC_TRNS,     KC_TRNS,         KC_TRNS,
+    KC_TRNS,     KC_TRNS,         KC_TRNS,    KC_TRNS,    KC_TRNS,     KC_TRNS,         KC_TRNS,
+                                  KC_TRNS,    KC_TRNS,    KC_TRNS,     KC_TRNS,         KC_TRNS,
+
+    KC_TRNS, KC_TRNS,
+    KC_TRNS,
+    KC_TRNS, RCTL(KC_SPC),  KC_TRNS
+  ),
+
 
   [NUMPAD] = LAYOUT_ergodox(
 
@@ -139,7 +213,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BUILD] = LAYOUT_ergodox(
 
     FN_STOP,       KC_TRNS,                KC_TRNS,          KC_TRNS,      KC_TRNS,         KC_TRNS,      KC_TRNS,
-    FN_SYNC,       KC_TRNS,                KC_TRNS,          KC_TRNS,      FN_PERMISSIONS,  KC_TRNS,      KC_TRNS,
+    FN_SYNC,       KC_TRNS,                KC_TRNS,          FN_RUN,       FN_PERMISSIONS,  KC_TRNS,      KC_TRNS,
     FN_CLEAR_DATA, KC_TRNS,                KC_TRNS,          KC_TRNS,      KC_TRNS,         KC_TRNS,
     KC_TRNS,       KC_TRNS,                FN_KILL_APP,      KC_TRNS,      FN_CLEAN,        FN_UNINSTALL, KC_TRNS,
     KC_TRNS,       KC_TRNS,                KC_TRNS,          KC_TRNS,      KC_TRNS,
@@ -184,11 +258,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [AS_SHORTCUTS] = LAYOUT_ergodox(
 
-      FN_INVALIDATE_CACHE,  FN_BYTECODE, FN_TERMINAL,      FN_LOGCAT,      KC_TRNS,      KC_TRNS,      KC_HYPR,
+      FN_INVALIDATE_CACHE,  FN_BYTECODE, FN_TERMINAL,      FN_LOGCAT,      FN_COMMIT,    FN_PROJECT,   KC_HYPR,
       KC_TRNS,              FN_COMMENT,  FN_DIFF_UP,       FN_DIFF_DOWN,   FN_TYPE_INFO, FN_CONFLICTS, FN_SUPER,
       KC_TRNS,              FN_LAYOUT,   FN_OPEN,          FN_DEFINITION,  FN_USAGE,     FN_SIGNATURE,
       KC_TRNS,              FN_FORMAT,   FN_CLOSE_OTHERS,  FN_CLONE_CARET, FN_TO_KOTLIN, FN_ANNOTATE,  FN_IMPLEMENTATION,
-      KC_TRNS,              KC_TRNS,     KC_TRNS,          KC_TRNS,        KC_TRNS,
+      KC_TRNS,              KC_TRNS,     KC_TRNS,          KC_TRNS,        FN_REVERT,
 
                                                    							KC_TRNS, KC_TRNS,
                                                             				   		 KC_TRNS,
@@ -199,9 +273,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_HYPR,  FN_FIND,    FN_OPEN,     			KC_TRNS,    FN_REPLACE,   			KC_TRNS,               KC_TRNS,
                 FN_ACTION,  KC_TRNS,     			KC_TRNS,    FN_RENAME,    			FN_STRUCTURE,          KC_TRNS,
       KC_HYPR,  KC_TRNS,    FN_EXTRACT_METHOD,      KC_TRNS,    FN_EXTRACT_VARIABLE,    FN_METHOD_UP,          KC_TRNS,
-                            KC_TRNS,     			KC_TRNS,    KC_TRNS,      			FN_METHOD_DOWN,        KC_TRNS,
+                            KC_TRNS,     			KC_TRNS,    KC_TRNS,      			FN_METHOD_DOWN,        FN_SPLIT_RIGHT,
 
-  	KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS,
       KC_TRNS,
       KC_TRNS, KC_TRNS, KC_TRNS
 
@@ -221,7 +295,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F12,            KC_F6,            KC_F7,         KC_F8,                 KC_F9,          KC_F10,                KC_TRNS,
     FN_PUSH_TALK,      KC_TRNS,          FN_TREMA,      FN_CIRC,               KC_TRNS,        KC_TRNS,               KC_TRNS,
                        KC_TRNS,          FN_GRAVE,      FN_AIGUE,              KC_TRNS,        KC_TRNS,               KC_BSPC,
-    SH_TT,             KC_TRNS,          KC_TRNS,       KC_TRNS,               KC_TRNS,        KC_PGUP,               KC_TRNS,
+    SH_TT,             KC_TRNS,          KC_TRNS,       KC_TRNS,               KC_TRNS,        KC_PGUP,               KC_CAPS,
     	                                 KC_TRNS,       KC_TRNS,               KC_HOME,        KC_PGDN,               KC_END,
     KC_TRNS, KC_TRNS,
     KC_RCTRL,
