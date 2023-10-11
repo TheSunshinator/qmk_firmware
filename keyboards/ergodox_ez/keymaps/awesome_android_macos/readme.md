@@ -8,3 +8,16 @@ Build (with defaults): `qmk compile`
 
 Flash: `qmk flash -kb ergodox_ez -km awesome_android_macos`
 Build (with defaults): `qmk flash`
+
+
+
+
+
+
+
+
+
+
+
+
+
