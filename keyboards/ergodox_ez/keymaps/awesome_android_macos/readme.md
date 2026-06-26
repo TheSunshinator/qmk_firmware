@@ -9,15 +9,4 @@ Build (with defaults): `qmk compile`
 Flash: `qmk flash -kb ergodox_ez -km awesome_android_macos`
 Build (with defaults): `qmk flash`
 
-
-
-
-
-
-
-
-
-
-
-
-
+Flashing also possible with [QMK Toolbox](https://qmk.fm/toolbox)

@@ -17,17 +17,17 @@
     XXXXXXX,                XXXXXXX,         XXXXXXX,      FN_CONTINUE_DEBUG, XXXXXXX,       XXXXXXX,            XXXXXXX, \
     FN_CLEAR_RESTART_DEBUG, FN_ATTACH_DEBUG, FN_STEP_OUT,  FN_STEP_INTO,      FN_NEXT_STEP,  XXXXXXX,                     \
     XXXXXXX,                XXXXXXX,         FN_KILL_APP,  XXXXXXX,           XXXXXXX,       FN_EVAL_EXPRESSION, XXXXXXX, \
-    XXXXXXX,                XXXXXXX,         XXXXXXX,      XXXXXXX,           XXXXXXX,                                   \
+    XXXXXXX,                XXXXXXX,         XXXXXXX,      XXXXXXX,           XXXXXXX,                                    \
                                              XXXXXXX,      XXXXXXX,                  \
                                                            XXXXXXX,                  \
-                            FN_ADB_RESTART_DEBUG, FN_DEBUG, XXXXXXX,                \
+                           FN_ADB_RESTART_DEBUG, FN_DEBUG, _______,                  \
                                                                                      \
-    XXXXXXX, XXXXXXX,       XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,               \
-    XXXXXXX, XXXXXXX,       XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,               \
+    XXXXXXX, XXXXXXX,       XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,                \
+    XXXXXXX, XXXXXXX,       XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,                \
              XXXXXXX,       XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,               FN_CLEAR_RESTART_DEBUG, \
-    XXXXXXX, FN_BREAKPOINT, FN_MUTE_DEBUG, XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,               \
-                            XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,               \
+    XXXXXXX, FN_BREAKPOINT, FN_MUTE_DEBUG, XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,                \
+                            XXXXXXX,       XXXXXXX,  XXXXXXX,  XXXXXXX,               XXXXXXX,                \
     XXXXXXX, _______,  \
     XXXXXXX,           \
-    XXXXXXX, XXXXXXX, XXXXXXX \
+    _______, XXXXXXX, XXXXXXX \
 )

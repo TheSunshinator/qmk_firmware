@@ -14,23 +14,24 @@
 #define FN_ADB_START     LCAG(KC_6)
 #define FN_START_DEBUG   HYPR(KC_6)
 #define FN_ADB           LCTL(LSFT(KC_A))
+#define FN_SCREENSHOT    LGUI(LSFT(KC_S))
 
 #define BUILD_LAYER LAYOUT_ergodox( \
     FN_STOP,       XXXXXXX, XXXXXXX,      XXXXXXX,  XXXXXXX,        XXXXXXX,      XXXXXXX, \
     FN_SYNC,       XXXXXXX, XXXXXXX,      FN_RUN,   FN_PERMISSIONS, XXXXXXX,      KC_LSFT, \
     FN_CLEAR_DATA, XXXXXXX, XXXXXXX,      XXXXXXX,  XXXXXXX,        XXXXXXX,               \
     XXXXXXX,       XXXXXXX, FN_KILL_APP,  XXXXXXX,  FN_CLEAN,       FN_UNINSTALL, XXXXXXX, \
-    XXXXXXX,       XXXXXXX, XXXXXXX,      XXXXXXX,  XXXXXXX,                               \
+    FN_SCREENSHOT, XXXXXXX, XXXXXXX,      XXXXXXX,  XXXXXXX,                               \
                                           _______,  XXXXXXX,         \
                                                     XXXXXXX,         \
-                            XXXXXXX,      KC_LSFT,  XXXXXXX,         \
-                                                                      \
-    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX, \
-    KC_RSFT,  XXXXXXX,  XXXXXXX,  XXXXXXX,      FN_REBUILD, XXXXXXX, XXXXXXX, \
+                            XXXXXXX,      KC_LSFT,  KC_LALT,         \
+                                                                     \
+    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX,       \
+    KC_RSFT,  XXXXXXX,  XXXXXXX,  XXXXXXX,      FN_REBUILD, XXXXXXX, XXXXXXX,      \
               FN_ADB,   XXXXXXX,  FN_ADB_START, XXXXXXX,  XXXXXXX,  FN_CLEAR_DATA, \
-    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX, \
-                        XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX, \
-    XXXXXXX, XXXXXXX,     \
-    XXXXXXX,              \
-    XXXXXXX, FN_RUN, FN_ADB_RESTART \
+    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX,       \
+                        XXXXXXX,  XXXXXXX,      XXXXXXX,  XXXXXXX,  XXXXXXX,       \
+    XXXXXXX, XXXXXXX,               \
+    XXXXXXX,                        \
+    KC_RALT, FN_RUN, FN_ADB_RESTART \
 )

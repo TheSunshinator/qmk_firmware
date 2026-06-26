@@ -8,11 +8,11 @@
 #define FN_TYPE_INFO        LCTL(LSFT(KC_P))
 #define FN_CONFLICTS        LCTL(LGUI(KC_C))
 #define FN_LAYOUT           HYPR(KC_Y)
-#define FN_OPEN             RGUI(RALT(KC_O))
+#define FN_OPEN             RGUI(RSFT(KC_O))
 #define FN_USAGE            LALT(KC_F7)
 #define FN_SIGNATURE        LGUI(KC_F6)
 #define FN_FORMAT           RALT(RGUI(KC_L))
-#define FN_CLOSE_OTHERS     RCTL(RALT(KC_Q))
+#define FN_CLOSE_OTHERS     RCTL(RALT(KC_W))
 #define FN_TO_KOTLIN        LALT(LGUI(LSFT(KC_K)))
 #define FN_ANNOTATE         HYPR(KC_A)
 #define FN_SEARCH           RGUI(RSFT(KC_F))
@@ -35,8 +35,8 @@
 #define FN_NEW_FILE         HYPR(KC_F)
 #define FN_GIT_HISTORY      HYPR(KC_H)
 #define FN_CLOSE_TAB        LGUI(KC_W)
-#define FN_NEXT_TAB         LCTL(KC_RGHT)
-#define FN_PREVIOUS_TAB     LCTL(KC_LEFT)
+#define FN_NEXT_TAB         LGUI(LSFT(KC_RBRC))
+#define FN_PREVIOUS_TAB     LGUI(LSFT(KC_LBRC))
 #define FN_APPLY_CONFLICT   HYPR(KC_L)
 #define FN_PROJECT          LGUI(KC_1)
 #define FN_COMMIT           LGUI(KC_0)
@@ -46,6 +46,7 @@
 #define FN_FIND             LGUI(KC_3)
 #define FN_DEVICES          LGUI(KC_2)
 #define FN_GRADLE           LGUI(KC_4)
+#define FN_CLEAR_LOGCAT     HYPR(KC_DEL)
 
 #define AS_SHORTCUTS_LAYER LAYOUT_ergodox( \
     FN_INVALIDATE_CACHE, XXXXXXX,    FN_TERMINAL,       FN_LOGCAT,      FN_GIT,    FN_FIND,    KC_HYPR,          \
@@ -57,10 +58,10 @@
                                               KC_LCTL,       \
                          KC_LGUI,    KC_LSFT, KC_LALT,       \
                                                              \
-    KC_HYPR,           XXXXXXX,    XXXXXXX,           FN_DEVICES,  FN_GRADLE,          FN_BYTECODE, XXXXXXX,        \
-    FN_APPLY_CONFLICT, FN_SEARCH,  FN_OPEN,           FN_TO_KOTLIN, FN_REPLACE,        XXXXXXX,     XXXXXXX,        \
-                       FN_ACTION,  FN_GIT_HISTORY,    FN_CLOSE_TAB, FN_RENAME,         FN_STRUCTURE, XXXXXXX,       \
-    XXXXXXX,           XXXXXXX,    FN_EXTRACT_METHOD, XXXXXXX,      FN_EXTRACT_VARIABLE, FN_METHOD_UP, FN_LAYOUT,   \
+    KC_HYPR,           XXXXXXX,    XXXXXXX,           FN_DEVICES,  FN_GRADLE,          FN_BYTECODE, XXXXXXX,           \
+    FN_APPLY_CONFLICT, FN_SEARCH,  FN_OPEN,           FN_TO_KOTLIN, FN_REPLACE,        XXXXXXX,     XXXXXXX,           \
+                       FN_ACTION,  FN_GIT_HISTORY,    FN_CLOSE_TAB, FN_RENAME,         FN_STRUCTURE, FN_CLEAR_LOGCAT,  \
+    XXXXXXX,           XXXXXXX,    FN_EXTRACT_METHOD, XXXXXXX,      FN_EXTRACT_VARIABLE, FN_METHOD_UP, FN_LAYOUT,      \
                                    FN_PREVIOUS_TAB,   FN_NEXT_TAB,  XXXXXXX,           FN_METHOD_DOWN, FN_SPLIT_RIGHT, \
     XXXXXXX, XXXXXXX, \
     KC_RCTL,          \

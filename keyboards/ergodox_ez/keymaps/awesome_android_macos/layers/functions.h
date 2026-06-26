@@ -5,12 +5,12 @@
 #define FN_AIGUE      LALT(KC_E)
 #define FN_CIRC       LALT(KC_I)
 #define FN_LOCK       LCTL(LGUI(KC_Q))
-#define FN_SCREENSHOT LSFT(LGUI(KC_4))
+#define FN_SCREENCROP LSFT(LGUI(KC_4))
 
 #define FUNCTIONS_LAYER LAYOUT_ergodox( \
     FN_LOCK,  KC_F1,   KC_F2,   KC_F3,         KC_F4,   KC_F5,   KC_F11,      \
     XXXXXXX,  XXXXXXX, KC_MPRV, KC_MPLY,       KC_MNXT, XXXXXXX, XXXXXXX, \
-    KC_DEL,   XXXXXXX, XXXXXXX, FN_SCREENSHOT, XXXXXXX, XXXXXXX,               \
+    KC_DEL,   XXXXXXX, XXXXXXX, FN_SCREENCROP, XXXXXXX, XXXXXXX,               \
     XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX,      \
     XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,                        \
                                 XXXXXXX, XXXXXXX,  \
